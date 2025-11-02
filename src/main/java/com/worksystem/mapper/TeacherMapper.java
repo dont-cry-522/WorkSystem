@@ -1,4 +1,7 @@
 package com.worksystem.mapper;
 
-public class TeacherMapper {
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface TeacherMapper {
 }

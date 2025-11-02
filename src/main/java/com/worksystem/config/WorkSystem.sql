@@ -1,4 +1,4 @@
-用户表
+
 CREATE TABLE user (
                       id INT AUTO_INCREMENT PRIMARY KEY,
                       username VARCHAR(50) NOT NULL UNIQUE COMMENT '用户名',
@@ -11,7 +11,7 @@ CREATE TABLE user (
                       introduction TEXT COMMENT '个人简介（学生适用）'
 );
 
-岗位表
+
 CREATE TABLE position (
                           id INT AUTO_INCREMENT PRIMARY KEY,
                           position_name VARCHAR(100) NOT NULL COMMENT '岗位名称',
@@ -22,7 +22,7 @@ CREATE TABLE position (
                           teacher_id INT NOT NULL COMMENT '发布岗位的老师id，关联user表',
                           FOREIGN KEY (teacher_id) REFERENCES user(id)
 );
-岗位申请表
+
 CREATE TABLE position_application (
                                       id INT AUTO_INCREMENT PRIMARY KEY,
                                       student_id INT NOT NULL COMMENT '申请学生的id，关联user表',
@@ -32,7 +32,7 @@ CREATE TABLE position_application (
                                       FOREIGN KEY (student_id) REFERENCES user(id),
                                       FOREIGN KEY (position_id) REFERENCES position(id)
 );
-考勤表
+
 CREATE TABLE attendance (
                             id INT AUTO_INCREMENT PRIMARY KEY,
                             student_id INT NOT NULL COMMENT '学生id，关联user表',
@@ -42,7 +42,7 @@ CREATE TABLE attendance (
                             FOREIGN KEY (student_id) REFERENCES user(id),
                             FOREIGN KEY (position_id) REFERENCES position(id)
 );
-消息表
+
 CREATE TABLE message (
                          id INT AUTO_INCREMENT PRIMARY KEY,
                          sender_id INT NOT NULL COMMENT '发送者id，关联user表',
@@ -53,7 +53,7 @@ CREATE TABLE message (
                          FOREIGN KEY (sender_id) REFERENCES user(id),
                          FOREIGN KEY (receiver_id) REFERENCES user(id)
 );
-验证码表
+
 CREATE TABLE verification_code (
                                    id INT AUTO_INCREMENT PRIMARY KEY,
                                    user_id INT NOT NULL COMMENT '用户id，关联user表',
@@ -62,7 +62,7 @@ CREATE TABLE verification_code (
                                    valid_time INT NOT NULL COMMENT '有效时长（分钟）',
                                    FOREIGN KEY (user_id) REFERENCES user(id)
 );
-岗位信息统计表
+
 CREATE TABLE position_statistics (
                                      id INT AUTO_INCREMENT PRIMARY KEY,
                                      position_id INT NOT NULL COMMENT '岗位id，关联position表',

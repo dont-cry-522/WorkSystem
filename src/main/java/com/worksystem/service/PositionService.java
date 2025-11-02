@@ -1,4 +1,4 @@
 package com.worksystem.service;
 
-public class PositionService {
+public interface PositionService {
 }

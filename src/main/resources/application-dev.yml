@@ -1,7 +1,0 @@
-#application:.yml
-spring:
-  application:
-    name: work-system
-  datasource:
-    url: jdbc:mysql://localhost:3306/work_system?useSSL=false&serverTimezone=UTC
-    username: root
