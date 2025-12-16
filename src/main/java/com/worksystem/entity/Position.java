@@ -30,9 +30,9 @@ public class Position {
     @TableField("teacher_id")
     private Long teacherId;
 
-    @TableField(fill = FieldFill.INSERT)
-    private LocalDateTime createTime;
-
-    @TableField(fill = FieldFill.INSERT_UPDATE)
-    private LocalDateTime updateTime;
+//    @TableField(fill = FieldFill.INSERT)
+//    private LocalDateTime createTime;
+//
+//    @TableField(fill = FieldFill.INSERT_UPDATE)
+//    private LocalDateTime updateTime;
 }

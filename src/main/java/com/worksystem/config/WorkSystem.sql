@@ -70,3 +70,12 @@ CREATE TABLE position_statistics (
                                      willing_to_stay_count INT DEFAULT 0 COMMENT '愿意继续留在该岗位的学生数量',
                                      FOREIGN KEY (position_id) REFERENCES position(id)
 );
+
+CREATE TABLE student_free_time (
+                                   id INT AUTO_INCREMENT PRIMARY KEY,
+                                   student_id INT NOT NULL,
+                                   weekday VARCHAR(10) NOT NULL, -- 'Monday', 'Tuesday'...
+                                   start_time TIME NOT NULL,
+                                   end_time TIME NOT NULL,
+                                   is_available BOOLEAN DEFAULT true
+);
